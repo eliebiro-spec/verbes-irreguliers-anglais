@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fbfcff">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Verbes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<title>Verbes irréguliers · Anglais</title>
+<style>
+:root{
+  --u: 32px;                     /* un carreau Seyès (8 mm) */
+  --papier:#fbfcff;
+  --carreau-fin:#e8ecf9;
+  --carreau-fort:#c9d1f0;
+  --encre:#1c2a72;
+  --encre-douce:#4a5590;
+  --marge:#e0525e;
+  --stylo:#d13540;               /* stylo rouge du prof */
+  --faux:#c0283a;
+  --juste:#1d7548;
+  --focus:#6474d8;
+  --sa-g:env(safe-area-inset-left,0px);
+  --sa-d:env(safe-area-inset-right,0px);
+  --sa-b:env(safe-area-inset-bottom,0px);
+  --voile:rgba(255,255,255,.88);
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;color-scheme:light;-webkit-tap-highlight-color:rgba(28,42,114,.12)}
+body{
+  margin:0;
+  min-height:100vh;
+  min-height:100dvh;
+  touch-action:manipulation;
+  font:400 1rem/1.55 var(--sans);
+  color:var(--encre);
+  background-color:var(--papier);
+  background-image:
+    linear-gradient(to right,var(--carreau-fort) 1px,transparent 1px),
+    linear-gradient(to bottom,var(--carreau-fort) 1px,transparent 1px),
+    linear-gradient(to bottom,var(--carreau-fin) 1px,transparent 1px);
+  background-size:var(--u) var(--u),var(--u) var(--u),var(--u) calc(var(--u)/4);
+}
+
+/* La feuille : marge rouge à gauche, contenu posé sur les carreaux */
+.feuille{
+  position:relative;
+  max-width:44rem;
+  min-height:100vh;
+  min-height:100dvh;
+  margin:0 auto;
+  padding:calc(var(--u)*1.5) calc(1rem + var(--sa-d)) calc(var(--u)*1.5 + var(--sa-b)) calc(2.4rem + var(--sa-g));
+}
+.feuille::before{
+  content:"";
+  position:absolute;
+  top:0;bottom:0;left:calc(1.3rem + var(--sa-g));
+  border-left:2px solid var(--marge);
+  opacity:.7;
+}
+
+h1{
+  display:inline-block;
+  margin:0;
+  padding-bottom:.12em;
+  font:italic 700 clamp(1.8rem,6vw,2.5rem)/1.15 var(--serif);
+  color:var(--encre);
+  border-bottom:3px solid var(--marge);   /* titre souligné à la règle */
+}
+h2{
+  margin:calc(var(--u)*1.5) 0 .5rem;
+  font:italic 700 1.4rem/1.25 var(--serif);
+  color:var(--encre);
+}
+p{margin:.5rem 0}
+.intro{max-width:36rem;margin-top:calc(var(--u)*.75)}
+.discret{color:var(--encre-douce);font-size:.9rem}
+
+/* Choix (boutons radio en pastilles) */
+fieldset{border:0;margin:0 0 1rem;padding:0;min-width:0}
+legend{padding:0;margin-bottom:.4rem;font-weight:600}
+.pastilles{display:flex;flex-wrap:wrap;gap:.5rem}
+.choix{position:relative;display:inline-block}
+.choix input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.choix span{
+  display:inline-flex;align-items:center;gap:.45rem;
+  min-height:44px;padding:0 1rem;
+  border:2px solid var(--encre);border-radius:999px;
+  background:var(--voile);color:var(--encre);
+  font-weight:600;font-size:.95rem;cursor:pointer;
+}
+.choix .nb{font-weight:400;color:var(--encre-douce);font-size:.85rem}
+.choix input:checked + span{background:var(--encre);color:#fff}
+.choix input:checked + span .nb{color:#c9d1f0}
+.choix input:focus-visible + span{outline:3px solid var(--focus);outline-offset:2px}
+.choix input:disabled + span{opacity:.55;border-style:dashed;cursor:not-allowed}
+
+/* Boutons */
+.btn{
+  font:600 1rem var(--sans);
+  min-height:48px;padding:.6rem 1.3rem;
+  color:var(--encre);background:var(--voile);
+  border:2px solid var(--encre);border-radius:6px;
+  -webkit-appearance:none;appearance:none;
+  cursor:pointer;
+}
+.btn.principal{background:var(--encre);color:#fff}
+@media (hover:hover){
+  .btn:hover{background:#eef1fc}
+  .btn.principal:hover{background:#142059}
+}
+.btn:focus-visible,.lien:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:calc(var(--u)*.75)}
+.lien{
+  font:inherit;color:var(--encre-douce);background:none;border:0;
+  text-decoration:underline;cursor:pointer;min-height:44px;padding:0 .25rem;
+  -webkit-appearance:none;appearance:none;
+}
+
+/* Relevés à points de suite */
+ul.points{list-style:none;margin:0;padding:0}
+ul.points li{
+  display:flex;align-items:flex-end;gap:.5rem;
+  min-height:var(--u);padding:.15rem 0;
+  background:var(--voile);
+}
+.lead{flex:1 1 1rem;min-width:.75rem;align-self:flex-end;height:1.05em;border-bottom:2px dotted #8d97cf}
+.serif{font-family:var(--serif)}
+.formes{font:600 1.1rem/1.3 var(--serif)}
+.gauche{display:block}
+.gauche small{display:block;color:var(--encre-douce);line-height:1.3}
+.date{flex:none;min-width:4.6rem;color:var(--encre-douce)}
+.vide{padding:.6rem .9rem;background:var(--voile);border-left:4px solid var(--carreau-fort)}
+.alerte{padding:.6rem .9rem;background:var(--voile);border-left:4px solid var(--faux);color:var(--faux);font-weight:600}
+.confirme{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .75rem;margin-top:.5rem}
+
+/* Question */
+.tete{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.progres{margin:0;font-weight:600}
+.coches{display:flex;gap:.3rem;list-style:none;margin:.4rem 0 calc(var(--u)*1.25);padding:0}
+.coche{
+  flex:1 1 0;max-width:2rem;aspect-ratio:1/1;
+  display:grid;place-items:center;
+  border:2px solid var(--encre-douce);border-radius:4px;
+  background:var(--voile);font-weight:700;font-size:.95rem;line-height:1;
+}
+.coche.ok{border-color:var(--juste);color:var(--juste)}
+.coche.ko{border-color:var(--faux);color:var(--faux)}
+.coche.courante{border-color:var(--encre);box-shadow:0 0 0 3px #b9c2ef}
+.francais{
+  margin:0;
+  font:italic 700 clamp(2rem,9vw,3rem)/1.1 var(--serif);
+  color:var(--encre);
+}
+.consigne{margin:.4rem 0 calc(var(--u)*.75);color:var(--encre-douce)}
+.tableau{display:block}
+.ligne{
+  display:grid;
+  grid-template-columns:minmax(6.4rem,8rem) 1fr;
+  column-gap:.75rem;align-items:center;
+  min-height:calc(var(--u)*2);
+  padding:.25rem 0;
+}
+.etiq{font-size:.95rem;font-weight:600;color:var(--encre-douce)}
+.mot{font:600 1.5rem/1.2 var(--serif);color:var(--encre);padding:0 .35rem}
+input[type=text]{
+  width:100%;min-height:48px;
+  padding:.45rem .35rem;
+  font:600 1.4rem/1.2 var(--serif);color:var(--encre);
+  background:var(--voile);
+  border:0;border-bottom:2px solid var(--encre);border-radius:0;
+  -webkit-appearance:none;appearance:none;
+}
+input[type=text]:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+input[type=text][readonly]{cursor:default}
+.ligne.ok input{color:var(--juste);border-bottom-color:var(--juste)}
+.ligne.ko input{color:var(--faux);border-bottom-color:var(--faux);text-decoration:line-through}
+.verdict{grid-column:2;padding:.15rem .35rem 0;font-weight:600;font-size:.95rem}
+.ligne.ok .verdict{color:var(--juste)}
+.ligne.ko .verdict{color:var(--faux)}
+.verdict b{font:700 1.2rem var(--serif);color:var(--juste)}
+.retour{
+  margin:calc(var(--u)*.75) 0 0;padding:.6rem .9rem;
+  background:var(--voile);border-left:4px solid var(--carreau-fort);
+}
+.retour.ok{border-left-color:var(--juste)}
+.retour.ko{border-left-color:var(--faux)}
+.retour p{margin:.15rem 0}
+.retour .gras{font-weight:700}
+.retour .triple{font:600 1.25rem/1.35 var(--serif)}
+
+/* Bilan */
+.note-rouge{
+  display:inline-block;margin:calc(var(--u)*.75) 0 .25rem;padding:0 .15em;
+  font:italic 700 clamp(4.5rem,22vw,7.5rem)/1.05 var(--serif);
+  color:var(--stylo);
+  border-bottom:.07em double var(--stylo);
+  transform:rotate(-4deg);
+  transform-origin:left bottom;
+  animation:pose .35s ease-out both;
+}
+@keyframes pose{from{opacity:0;transform:rotate(-4deg) scale(1.35)}to{opacity:1;transform:rotate(-4deg) scale(1)}}
+.mention{margin:.25rem 0;font:italic 700 1.4rem var(--serif)}
+.corr{list-style:none;margin:0;padding:0}
+.corr li{display:flex;gap:.75rem;padding:.5rem .5rem .5rem .6rem;margin-bottom:.35rem;background:var(--voile);border-left:4px solid var(--carreau-fort)}
+.corr li.ok{border-left-color:var(--juste)}
+.corr li.ko{border-left-color:var(--faux)}
+.corr .signe{flex:none;width:1.2rem;font-weight:700}
+.corr li.ok .signe{color:var(--juste)}
+.corr li.ko .signe{color:var(--faux)}
+.corr .fr{color:var(--encre-douce)}
+.corr .ecrit{margin:.15rem 0 0;color:var(--faux);font-size:.92rem}
+
+footer{margin-top:calc(var(--u)*2);color:var(--encre-douce);font-size:.85rem}
+footer p{margin:.15rem 0}
+
+@supports not (aspect-ratio:1/1){
+  .coche{height:1.7rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<main class="feuille" id="app"></main>
+<noscript><p style="padding:2rem">Cette application a besoin de JavaScript pour fonctionner.</p></noscript>
+
+<!-- Base de données : 99 verbes. b = base verbale, p = prétérit, pp = participe passé, fr = traduction,
+     n = niveau (1 indispensables, 2 courants). Plusieurs variantes acceptées : séparées par « / ». -->
+<script type="application/json" id="donnees-verbes">
+[
+{"b":"be","p":"was/were","pp":"been","fr":"être","n":1,"note":"was avec I, he, she, it ; were avec you, we, they."},
+{"b":"have","p":"had","pp":"had","fr":"avoir","n":1},
+{"b":"do","p":"did","pp":"done","fr":"faire (une tâche, une action)","n":1},
+{"b":"make","p":"made","pp":"made","fr":"fabriquer, faire","n":1},
+{"b":"go","p":"went","pp":"gone","fr":"aller","n":1},
+{"b":"come","p":"came","pp":"come","fr":"venir","n":1},
+{"b":"become","p":"became","pp":"become","fr":"devenir","n":1},
+{"b":"get","p":"got","pp":"got/gotten","fr":"obtenir, recevoir","n":1,"note":"gotten est la forme de l'anglais américain."},
+{"b":"give","p":"gave","pp":"given","fr":"donner","n":1},
+{"b":"take","p":"took","pp":"taken","fr":"prendre","n":1},
+{"b":"see","p":"saw","pp":"seen","fr":"voir","n":1},
+{"b":"say","p":"said","pp":"said","fr":"dire","n":1},
+{"b":"tell","p":"told","pp":"told","fr":"raconter, dire à quelqu'un","n":1},
+{"b":"know","p":"knew","pp":"known","fr":"savoir, connaître","n":1},
+{"b":"think","p":"thought","pp":"thought","fr":"penser","n":1},
+{"b":"find","p":"found","pp":"found","fr":"trouver","n":1},
+{"b":"buy","p":"bought","pp":"bought","fr":"acheter","n":1},
+{"b":"bring","p":"brought","pp":"brought","fr":"apporter","n":1},
+{"b":"eat","p":"ate","pp":"eaten","fr":"manger","n":1},
+{"b":"drink","p":"drank","pp":"drunk","fr":"boire","n":1},
+{"b":"write","p":"wrote","pp":"written","fr":"écrire","n":1},
+{"b":"read","p":"read","pp":"read","fr":"lire","n":1,"note":"Écrit pareil aux trois formes, mais se prononce /riːd/, puis /rɛd/ et /rɛd/."},
+{"b":"speak","p":"spoke","pp":"spoken","fr":"parler","n":1},
+{"b":"run","p":"ran","pp":"run","fr":"courir","n":1},
+{"b":"sit","p":"sat","pp":"sat","fr":"s'asseoir","n":1},
+{"b":"stand","p":"stood","pp":"stood","fr":"se tenir debout","n":1},
+{"b":"leave","p":"left","pp":"left","fr":"partir, quitter","n":1},
+{"b":"meet","p":"met","pp":"met","fr":"rencontrer","n":1},
+{"b":"begin","p":"began","pp":"begun","fr":"commencer","n":1},
+{"b":"sleep","p":"slept","pp":"slept","fr":"dormir","n":1},
+{"b":"lose","p":"lost","pp":"lost","fr":"perdre","n":1},
+{"b":"win","p":"won","pp":"won","fr":"gagner","n":1},
+{"b":"send","p":"sent","pp":"sent","fr":"envoyer","n":1},
+{"b":"spend","p":"spent","pp":"spent","fr":"dépenser, passer (du temps)","n":1},
+{"b":"pay","p":"paid","pp":"paid","fr":"payer","n":1},
+{"b":"put","p":"put","pp":"put","fr":"mettre","n":1,"note":"Les trois formes sont identiques."},
+{"b":"let","p":"let","pp":"let","fr":"laisser, permettre","n":1,"note":"Les trois formes sont identiques."},
+{"b":"cut","p":"cut","pp":"cut","fr":"couper","n":1,"note":"Les trois formes sont identiques."},
+{"b":"hear","p":"heard","pp":"heard","fr":"entendre","n":1},
+{"b":"feel","p":"felt","pp":"felt","fr":"ressentir","n":1},
+{"b":"keep","p":"kept","pp":"kept","fr":"garder","n":1},
+{"b":"sell","p":"sold","pp":"sold","fr":"vendre","n":1},
+{"b":"catch","p":"caught","pp":"caught","fr":"attraper","n":1},
+{"b":"build","p":"built","pp":"built","fr":"construire","n":1},
+{"b":"break","p":"broke","pp":"broken","fr":"casser","n":1},
+{"b":"choose","p":"chose","pp":"chosen","fr":"choisir","n":1},
+{"b":"drive","p":"drove","pp":"driven","fr":"conduire","n":1},
+{"b":"fall","p":"fell","pp":"fallen","fr":"tomber","n":1},
+{"b":"forget","p":"forgot","pp":"forgotten","fr":"oublier","n":1},
+{"b":"teach","p":"taught","pp":"taught","fr":"enseigner","n":1},
+{"b":"understand","p":"understood","pp":"understood","fr":"comprendre","n":1},
+{"b":"wear","p":"wore","pp":"worn","fr":"porter (un vêtement)","n":1},
+{"b":"swim","p":"swam","pp":"swum","fr":"nager","n":1},
+{"b":"sing","p":"sang","pp":"sung","fr":"chanter","n":1},
+{"b":"learn","p":"learnt/learned","pp":"learnt/learned","fr":"apprendre","n":1,"note":"Deux orthographes possibles : -t (britannique) ou -ed (américaine)."},
+{"b":"mean","p":"meant","pp":"meant","fr":"signifier, vouloir dire","n":1},
+{"b":"hold","p":"held","pp":"held","fr":"tenir","n":1},
+{"b":"grow","p":"grew","pp":"grown","fr":"grandir, pousser","n":1},
+{"b":"draw","p":"drew","pp":"drawn","fr":"dessiner","n":1},
+{"b":"fly","p":"flew","pp":"flown","fr":"voler (dans les airs)","n":1},
+{"b":"cost","p":"cost","pp":"cost","fr":"coûter","n":1,"note":"Les trois formes sont identiques."},
+{"b":"ride","p":"rode","pp":"ridden","fr":"monter (à cheval, à vélo)","n":1},
+{"b":"throw","p":"threw","pp":"thrown","fr":"lancer","n":1},
+{"b":"wake","p":"woke","pp":"woken","fr":"se réveiller","n":1},
+
+{"b":"forgive","p":"forgave","pp":"forgiven","fr":"pardonner","n":2},
+{"b":"forbid","p":"forbade","pp":"forbidden","fr":"interdire","n":2},
+{"b":"freeze","p":"froze","pp":"frozen","fr":"geler","n":2},
+{"b":"hide","p":"hid","pp":"hidden","fr":"cacher, se cacher","n":2},
+{"b":"rise","p":"rose","pp":"risen","fr":"se lever, monter","n":2},
+{"b":"shake","p":"shook","pp":"shaken","fr":"secouer","n":2},
+{"b":"sink","p":"sank","pp":"sunk","fr":"couler","n":2},
+{"b":"steal","p":"stole","pp":"stolen","fr":"voler (dérober)","n":2},
+{"b":"show","p":"showed","pp":"shown/showed","fr":"montrer","n":2},
+{"b":"bite","p":"bit","pp":"bitten","fr":"mordre","n":2},
+{"b":"blow","p":"blew","pp":"blown","fr":"souffler","n":2},
+{"b":"feed","p":"fed","pp":"fed","fr":"nourrir","n":2},
+{"b":"fight","p":"fought","pp":"fought","fr":"se battre","n":2},
+{"b":"hang","p":"hung","pp":"hung","fr":"accrocher, suspendre","n":2,"note":"Pour « pendre quelqu'un », le verbe est régulier : hang – hanged – hanged."},
+{"b":"hurt","p":"hurt","pp":"hurt","fr":"blesser, faire mal","n":2,"note":"Les trois formes sont identiques."},
+{"b":"lead","p":"led","pp":"led","fr":"mener, diriger","n":2},
+{"b":"lend","p":"lent","pp":"lent","fr":"prêter","n":2},
+{"b":"ring","p":"rang","pp":"rung","fr":"sonner","n":2},
+{"b":"seek","p":"sought","pp":"sought","fr":"chercher","n":2},
+{"b":"set","p":"set","pp":"set","fr":"fixer, régler","n":2,"note":"Les trois formes sont identiques."},
+{"b":"shoot","p":"shot","pp":"shot","fr":"tirer (avec une arme)","n":2},
+{"b":"shut","p":"shut","pp":"shut","fr":"fermer","n":2,"note":"Les trois formes sont identiques."},
+{"b":"spell","p":"spelt/spelled","pp":"spelt/spelled","fr":"épeler","n":2,"note":"Deux orthographes possibles : -t (britannique) ou -ed (américaine)."},
+{"b":"spread","p":"spread","pp":"spread","fr":"répandre, étaler","n":2,"note":"Les trois formes sont identiques."},
+{"b":"stick","p":"stuck","pp":"stuck","fr":"coller","n":2},
+{"b":"swear","p":"swore","pp":"sworn","fr":"jurer","n":2},
+{"b":"sweep","p":"swept","pp":"swept","fr":"balayer","n":2},
+{"b":"tear","p":"tore","pp":"torn","fr":"déchirer","n":2},
+{"b":"beat","p":"beat","pp":"beaten","fr":"battre","n":2},
+{"b":"dig","p":"dug","pp":"dug","fr":"creuser","n":2},
+{"b":"hit","p":"hit","pp":"hit","fr":"frapper","n":2,"note":"Les trois formes sont identiques."},
+{"b":"quit","p":"quit","pp":"quit","fr":"arrêter (de faire), abandonner","n":2,"note":"Les trois formes sont identiques."},
+{"b":"shine","p":"shone","pp":"shone","fr":"briller","n":2},
+{"b":"burn","p":"burnt/burned","pp":"burnt/burned","fr":"brûler","n":2,"note":"Deux orthographes possibles : -t (britannique) ou -ed (américaine)."},
+{"b":"dream","p":"dreamt/dreamed","pp":"dreamt/dreamed","fr":"rêver","n":2,"note":"Deux orthographes possibles : -t (britannique) ou -ed (américaine)."}
+]
+</script>
+
+<script>
+(function(){
+'use strict';
+
+/* ---------- Données et constantes ---------- */
+const VERBES = JSON.parse(document.getElementById('donnees-verbes').textContent);
+const NB = 10;                                   // questions par série
+const CLE = 'verbes-irreguliers:v1';
+const ANCIENNE_CLE = 'verbes-irreguliers-seconde:v1';   // reprise des scores d'une version précédente
+const FORMES = [
+  {k:'b',  nom:'Base verbale',    court:'la base verbale'},
+  {k:'p',  nom:'Prétérit',        court:'le prétérit'},
+  {k:'pp', nom:'Participe passé', court:'le participe passé'}
+];
+const NOMS_NIVEAU = {'1':'Indispensables','2':'Courants','tous':'Tous','faibles':'Points faibles'};
+
+/* ---------- Mémoire des scores (localStorage) ---------- */
+let stockageOk = true;
+const vierge = () => ({sessions:[], verbes:{}, prefs:{niveau:'1', mode:'deux'}});
+
+function charger(){
+  try{
+    localStorage.setItem(CLE+':test','1');
+    localStorage.removeItem(CLE+':test');
+    const brut = localStorage.getItem(CLE) || localStorage.getItem(ANCIENNE_CLE);
+    if(brut){
+      const d = JSON.parse(brut);
+      if(d && typeof d === 'object'){
+        return {
+          sessions: Array.isArray(d.sessions) ? d.sessions : [],
+          verbes: (d.verbes && typeof d.verbes === 'object') ? d.verbes : {},
+          prefs: Object.assign({niveau:'1', mode:'deux'}, d.prefs || {})
+        };
+      }
+    }
+  }catch(e){ stockageOk = false; }
+  return vierge();
+}
+function sauver(){
+  try{ localStorage.setItem(CLE, JSON.stringify(stock)); }
+  catch(e){ stockageOk = false; }
+}
+let stock = charger();
+
+/* ---------- Petits outils ---------- */
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const aff = s => esc(s).split('/').join(' / ');
+const nombreFr = n => String(Math.round(n*10)/10).replace('.', ',');
+const norm = s => String(s).toLowerCase().replace(/[’‘`´]/g, "'").replace(/\s+/g, ' ').trim().replace(/[.!?]+$/, '');
+
+function estJuste(saisie, attendu){
+  const admis = new Set(attendu.split('/').map(norm));
+  const parts = norm(saisie).split(/\s*(?:\/|,|;|\bor\b|\bou\b)\s*/).filter(Boolean);
+  return parts.length > 0 && parts.every(p => admis.has(p));
+}
+function melanger(a){
+  a = a.slice();
+  for(let i = a.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+/* ---------- Choix des verbes (les verbes ratés reviennent plus souvent) ---------- */
+function poids(v){
+  const e = stock.verbes[v.b];
+  if(!e || !e.a) return 2;                       // jamais vu : légèrement prioritaire
+  let w = 1 + 4 * (1 - e.c / e.a);
+  if(e.d === false) w += 2;                      // raté la dernière fois
+  return w;
+}
+function tirage(pool, n){
+  const restants = pool.slice();
+  const out = [];
+  while(out.length < n && restants.length){
+    const total = restants.reduce((t, v) => t + poids(v), 0);
+    let r = Math.random() * total, i = 0;
+    for(; i < restants.length; i++){ r -= poids(restants[i]); if(r <= 0) break; }
+    if(i >= restants.length) i = restants.length - 1;
+    out.push(restants.splice(i, 1)[0]);
+  }
+  return out;
+}
+function faibles(){
+  return VERBES.filter(v => {
+    const e = stock.verbes[v.b];
+    return e && e.a > 0 && (e.d === false || e.c / e.a < 0.7);
+  });
+}
+function stats(){
+  const reelles = stock.sessions.filter(x => !x.r);
+  let meilleur = null;
+  reelles.forEach(x => { if(!meilleur || x.s / x.t > meilleur.s / meilleur.t) meilleur = x; });
+  const der = reelles.slice(-5);
+  const moy = der.length ? der.reduce((t, x) => t + x.s / x.t, 0) / der.length * 10 : null;
+  let maitrises = 0;
+  VERBES.forEach(v => {
+    const e = stock.verbes[v.b];
+    if(e && e.a >= 2 && e.c / e.a >= 0.8 && e.d) maitrises++;
+  });
+  return {jouees: reelles.length, meilleur, moy, maitrises};
+}
+
+/* ---------- État de l'application ---------- */
+const app = document.getElementById('app');
+let etat = {ecran:'accueil', session:null, confirmer:false};
+let verrou = 0;
+
+const courante = () => etat.session.questions[etat.session.i];
+const aTrouver = q => FORMES.map(f => f.k).filter(k => k !== q.donne);
+
+function lancer(verbes, meta){
+  etat.session = {
+    questions: verbes.map(v => ({
+      v,
+      donne: meta.mode === 'deux' ? ['b','p','pp'][Math.floor(Math.random()*3)] : null,
+      saisies: {b:'', p:'', pp:''},
+      res: null
+    })),
+    i: 0, score: 0, meta, record: false
+  };
+  etat.ecran = 'quiz';
+  render(true);
+}
+function lancerSerie(niveau, mode){
+  let choix;
+  if(niveau === 'faibles'){
+    const f = faibles();
+    choix = tirage(f, NB);
+    if(choix.length < NB){
+      const reste = VERBES.filter(v => f.indexOf(v) === -1);
+      choix = choix.concat(tirage(reste, NB - choix.length));
+    }
+  }else{
+    const pool = niveau === 'tous' ? VERBES : VERBES.filter(v => String(v.n) === niveau);
+    choix = tirage(pool, NB);
+  }
+  lancer(melanger(choix), {niveau, mode, revision:false});
+}
+
+/* ---------- Actions ---------- */
+const actions = {
+  commencer(){
+    const n = app.querySelector('input[name=niveau]:checked');
+    const m = app.querySelector('input[name=mode]:checked');
+    const niveau = n ? n.value : '1';
+    const mode = m ? m.value : 'deux';
+    stock.prefs = {niveau, mode};
+    sauver();
+    lancerSerie(niveau, mode);
+  },
+  valider(){
+    const q = courante();
+    if(q.res) return;
+    const trouver = aTrouver(q);
+    trouver.forEach(k => {
+      const inp = document.getElementById('champ-' + k);
+      q.saisies[k] = inp ? inp.value : '';
+    });
+    const champs = {};
+    let tout = true;
+    trouver.forEach(k => {
+      const ok = estJuste(q.saisies[k], q.v[k]);
+      champs[k] = ok;
+      if(!ok) tout = false;
+    });
+    q.res = {champs, ok: tout};
+    if(tout) etat.session.score++;
+
+    const e = stock.verbes[q.v.b] || {a:0, c:0, d:null};
+    e.a++; if(tout) e.c++; e.d = tout;
+    stock.verbes[q.v.b] = e;
+
+    if(etat.session.i === etat.session.questions.length - 1) terminer();
+    sauver();
+    verrou = Date.now() + 350;
+    render(false);
+  },
+  suivante(){
+    if(Date.now() < verrou) return;
+    const S = etat.session;
+    if(!courante().res) return;
+    if(S.i < S.questions.length - 1){ S.i++; render(true); }
+    else { etat.ecran = 'bilan'; render(true); }
+  },
+  abandon(){ etat.ecran = 'accueil'; etat.session = null; render(true); },
+  accueil(){ etat.ecran = 'accueil'; etat.session = null; render(true); },
+  rejouer(){ lancerSerie(etat.session.meta.niveau, etat.session.meta.mode); },
+  erreurs(){
+    const S = etat.session;
+    const rates = S.questions.filter(q => !q.res.ok).map(q => q.v);
+    if(!rates.length) return;
+    lancer(melanger(rates), {niveau:S.meta.niveau, mode:S.meta.mode, revision:true});
+  },
+  effacer(){ etat.confirmer = true; render(false); },
+  effacer_non(){ etat.confirmer = false; render(false); },
+  effacer_oui(){ stock = vierge(); sauver(); etat.confirmer = false; render(true); }
+};
+
+function terminer(){
+  const S = etat.session;
+  const total = S.questions.length;
+  const rev = !!S.meta.revision;
+  const prec = stock.sessions.filter(x => !x.r);
+  const ratio = S.score / total;
+  S.record = !rev && total === NB && prec.length > 0 &&
+             ratio > Math.max.apply(null, prec.map(x => x.s / x.t));
+  stock.sessions.push({d:Date.now(), s:S.score, t:total, n:S.meta.niveau, m:S.meta.mode, r:rev ? 1 : 0});
+  if(stock.sessions.length > 200) stock.sessions = stock.sessions.slice(-200);
+}
+
+/* ---------- Vues ---------- */
+function vueAccueil(){
+  const st = stats();
+  const fb = faibles();
+  let {niveau, mode} = stock.prefs;
+  if(niveau === 'faibles' && !fb.length) niveau = '1';
+  const nb = k => k === 'tous' ? VERBES.length : VERBES.filter(v => String(v.n) === k).length;
+
+  const optsN = [['1','Indispensables',nb('1')],['2','Courants',nb('2')],['tous','Tous',nb('tous')],['faibles','Mes points faibles',fb.length]];
+  const optsM = [['deux','Une forme donnée'],['trois','Français seulement']];
+
+  const pastillesN = optsN.map(([val, nom, n]) =>
+    `<label class="choix"><input type="radio" name="niveau" value="${val}" ${niveau === val ? 'checked' : ''} ${val === 'faibles' && !fb.length ? 'disabled' : ''}><span>${nom} <span class="nb">${n}</span></span></label>`
+  ).join('');
+  const pastillesM = optsM.map(([val, nom]) =>
+    `<label class="choix"><input type="radio" name="mode" value="${val}" ${mode === val ? 'checked' : ''}><span>${nom}</span></label>`
+  ).join('');
+
+  let resultats;
+  if(!stock.sessions.length){
+    resultats = `<p class="vide">Tes résultats apparaîtront ici après ta première série.</p>`;
+  }else{
+    const hist = stock.sessions.slice(-8).reverse().map(x => {
+      const d = new Date(x.d).toLocaleDateString('fr-FR', {day:'numeric', month:'short'});
+      const lib = x.r ? 'Erreurs refaites'
+        : (NOMS_NIVEAU[x.n] || '') + ', ' + (x.m === 'trois' ? '3 formes' : '2 formes');
+      return `<li><span class="date">${esc(d)}</span><span class="detail">${esc(lib)}</span><span class="lead" aria-hidden="true"></span><strong>${x.s}/${x.t}</strong></li>`;
+    }).join('');
+    const revoir = fb.slice().sort((a, b) => {
+      const ea = stock.verbes[a.b], eb = stock.verbes[b.b];
+      return (ea.c / ea.a) - (eb.c / eb.a) || eb.a - ea.a;
+    }).slice(0, 6).map(v => {
+      const e = stock.verbes[v.b];
+      return `<li><span class="gauche"><span class="formes">${aff(v.b)} – ${aff(v.p)} – ${aff(v.pp)}</span><small>${esc(v.fr)}</small></span><span class="lead" aria-hidden="true"></span><span>${e.c} sur ${e.a}</span></li>`;
+    }).join('');
+    resultats = `
+      <ul class="points">
+        <li><span>Séries jouées</span><span class="lead" aria-hidden="true"></span><strong>${st.jouees}</strong></li>
+        <li><span>Meilleur score</span><span class="lead" aria-hidden="true"></span><strong>${st.meilleur ? st.meilleur.s + '/' + st.meilleur.t : '–'}</strong></li>
+        <li><span>Moyenne des 5 dernières séries</span><span class="lead" aria-hidden="true"></span><strong>${st.moy !== null ? nombreFr(st.moy) + '/10' : '–'}</strong></li>
+        <li><span>Verbes maîtrisés</span><span class="lead" aria-hidden="true"></span><strong>${st.maitrises} sur ${VERBES.length}</strong></li>
+      </ul>
+      <p class="discret">Un verbe est maîtrisé quand tu l'as réussi au moins 2 fois, dont la dernière.</p>
+      <h2>Dernières séries</h2>
+      <ul class="points">${hist}</ul>
+      ${revoir ? `<h2>Verbes à revoir</h2><ul class="points">${revoir}</ul>` : ''}
+      <div class="confirme">${etat.confirmer
+        ? `<span>Effacer tous tes scores ?</span><button class="btn" data-action="effacer_oui">Oui, effacer</button><button class="lien" data-action="effacer_non">Annuler</button>`
+        : `<button class="lien" data-action="effacer">Effacer mes scores</button>`}</div>`;
+  }
+
+  return `
+    <h1>Verbes irréguliers</h1>
+    <p class="discret" style="margin-top:.5rem">Anglais</p>
+    <p class="intro">Chaque série compte ${NB} questions. Écris les formes manquantes : les verbes que tu rates reviennent plus souvent.</p>
+    ${stockageOk ? '' : '<p class="alerte">Les scores ne peuvent pas être enregistrés ici (le navigateur bloque le stockage). Tu peux quand même t\'entraîner.</p>'}
+    <h2>Ta série</h2>
+    <fieldset><legend>Verbes</legend><div class="pastilles">${pastillesN}</div></fieldset>
+    ${fb.length ? '' : '<p class="discret" style="margin-top:-.4rem">« Mes points faibles » se débloque dès que tu rates un verbe.</p>'}
+    <fieldset><legend>Difficulté</legend><div class="pastilles">${pastillesM}</div></fieldset>
+    <div class="actions"><button class="btn principal" data-action="commencer">Commencer une série de ${NB}</button></div>
+    <h2>Tes résultats</h2>
+    ${resultats}
+    ${pied()}`;
+}
+
+function vueQuiz(){
+  const S = etat.session;
+  const q = courante();
+  const n = S.questions.length;
+  const dernier = S.i === n - 1;
+  const trouver = aTrouver(q);
+
+  const coches = S.questions.map((x, j) => {
+    let cls = 'coche', sym = '', lab = 'Question ' + (j + 1);
+    if(x.res){ cls += x.res.ok ? ' ok' : ' ko'; sym = x.res.ok ? '✓' : '✗'; lab += x.res.ok ? ', juste' : ', fausse'; }
+    if(j === S.i) cls += ' courante';
+    return `<li class="${cls}" aria-label="${lab}" ${j === S.i ? 'aria-current="step"' : ''}>${sym}</li>`;
+  }).join('');
+
+  const lignes = FORMES.map(f => {
+    const k = f.k;
+    if(q.donne === k){
+      return `<div class="ligne"><span class="etiq">${f.nom}</span><span class="mot">${aff(q.v[k])}</span></div>`;
+    }
+    const r = q.res;
+    const idx = trouver.indexOf(k);
+    const hint = idx < trouver.length - 1 ? 'next' : 'done';
+    const cls = r ? (r.champs[k] ? 'ok' : 'ko') : '';
+    return `<div class="ligne ${cls}">
+      <label class="etiq" for="champ-${k}">${f.nom}</label>
+      <input id="champ-${k}" data-forme="${k}" type="text" value="${esc(q.saisies[k])}" ${r ? 'readonly aria-describedby="verdict-' + k + '"' : ''}
+        autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" enterkeyhint="${hint}">
+      ${r ? `<span class="verdict" id="verdict-${k}">${r.champs[k] ? '✓ Juste' : '✗ Réponse attendue : <b>' + aff(q.v[k]) + '</b>'}</span>` : ''}
+    </div>`;
+  }).join('');
+
+  let retour = '';
+  if(q.res){
+    const ok = q.res.ok;
+    retour = `<div class="retour ${ok ? 'ok' : 'ko'}" role="status">
+      <p class="gras">${ok ? 'Juste.' : 'Pas tout à fait. Retiens :'}</p>
+      <p class="triple">${aff(q.v.b)} – ${aff(q.v.p)} – ${aff(q.v.pp)}</p>
+      ${q.v.note ? `<p class="discret">${esc(q.v.note)}</p>` : ''}
+    </div>`;
+  }
+
+  const bouton = q.res
+    ? `<button class="btn principal" id="btn-suivante" data-action="suivante">${dernier ? 'Voir mon bilan' : 'Question suivante'}</button>`
+    : `<button class="btn principal" data-action="valider">Valider</button>`;
+
+  return `
+    <div class="tete">
+      <p class="progres">Question ${S.i + 1} sur ${n}</p>
+      <button class="lien" data-action="abandon">Abandonner</button>
+    </div>
+    <ol class="coches" aria-label="Progression">${coches}</ol>
+    <h2 class="francais" style="margin:0">${esc(q.v.fr)}</h2>
+    <p class="consigne">${q.donne ? 'Écris les deux formes manquantes.' : 'Écris les trois formes.'}</p>
+    <div class="tableau">${lignes}</div>
+    ${retour}
+    <div class="actions">${bouton}</div>`;
+}
+
+function vueBilan(){
+  const S = etat.session;
+  const t = S.questions.length, s = S.score;
+  const ratio = s / t;
+  const mention = ratio === 1 ? 'Sans faute.'
+    : ratio >= 0.8 ? 'Très bien.'
+    : ratio >= 0.6 ? 'Bien.'
+    : ratio >= 0.4 ? 'À consolider.'
+    : 'Ça viendra avec la répétition.';
+  const rates = S.questions.filter(q => !q.res.ok).length;
+
+  const liste = S.questions.map(q => {
+    const ok = q.res.ok;
+    const fautes = aTrouver(q).filter(k => !q.res.champs[k]).map(k => {
+      const f = FORMES.find(x => x.k === k);
+      const ecrit = q.saisies[k].trim();
+      return ecrit ? `Tu as écrit « ${esc(ecrit)} » pour ${f.court}.` : `${f.nom} laissé vide.`;
+    }).join(' ');
+    return `<li class="${ok ? 'ok' : 'ko'}">
+      <span class="signe" aria-hidden="true">${ok ? '✓' : '✗'}</span>
+      <div>
+        <span class="sr-only" style="position:absolute;left:-9999px">${ok ? 'Juste' : 'Faux'} : </span>
+        <span class="formes">${aff(q.v.b)} – ${aff(q.v.p)} – ${aff(q.v.pp)}</span>
+        <span class="fr"> (${esc(q.v.fr)})</span>
+        ${fautes ? `<p class="ecrit">${fautes}</p>` : ''}
+      </div>
+    </li>`;
+  }).join('');
+
+  return `
+    <h1>Bilan</h1>
+    <div><span class="note-rouge">${s}/${t}</span></div>
+    <p class="mention">${mention}</p>
+    ${S.record ? '<p><strong>Nouveau record.</strong> Meilleure série jusqu\'ici.</p>' : ''}
+    <h2>Correction</h2>
+    <ul class="corr">${liste}</ul>
+    <div class="actions">
+      <button class="btn principal" data-action="rejouer">Rejouer une série</button>
+      ${rates ? `<button class="btn" data-action="erreurs">Refaire mes ${rates} erreur${rates > 1 ? 's' : ''}</button>` : ''}
+      <button class="btn" data-action="accueil">Retour à l'accueil</button>
+    </div>
+    ${pied()}`;
+}
+
+function pied(){
+  return `<footer><p>Fonctionne hors ligne. Les scores restent sur cet appareil.</p><p>Propulsé par Elie Biro</p></footer>`;
+}
+
+/* ---------- Affichage ---------- */
+function render(nouvelEcran){
+  app.innerHTML = etat.ecran === 'accueil' ? vueAccueil()
+                : etat.ecran === 'quiz' ? vueQuiz() : vueBilan();
+  if(nouvelEcran) window.scrollTo(0, 0);
+  if(etat.ecran === 'quiz'){
+    const q = courante();
+    if(q.res){
+      const b = document.getElementById('btn-suivante');
+      if(b){
+        b.focus();
+        try{ b.scrollIntoView({block:'nearest'}); }catch(e){}
+      }
+    }else{
+      const c = app.querySelector('input[data-forme]');
+      if(c) c.focus({preventScroll:true});
+    }
+  }
+}
+
+/* ---------- Événements ---------- */
+app.addEventListener('click', e => {
+  const b = e.target.closest('[data-action]');
+  if(!b) return;
+  const f = actions[b.dataset.action];
+  if(f) f();
+});
+// iPhone : garder le clavier ouvert quand on touche « Valider », sinon le bouton
+// peut bouger pendant la fermeture du clavier et le toucher est perdu.
+app.addEventListener('mousedown', e => {
+  if(e.target.closest && e.target.closest('[data-action="valider"]')) e.preventDefault();
+});
+app.addEventListener('change', e => {
+  if(e.target.name === 'niveau' || e.target.name === 'mode'){
+    stock.prefs[e.target.name] = e.target.value;
+    sauver();
+  }
+});
+app.addEventListener('keydown', e => {
+  if(e.key !== 'Enter') return;
+  const t = e.target;
+  if(!(t.matches && t.matches('input[data-forme]'))) return;
+  e.preventDefault();
+  if(t.readOnly){ actions.suivante(); return; }
+  const champs = Array.prototype.slice.call(app.querySelectorAll('input[data-forme]'));
+  const i = champs.indexOf(t);
+  if(i < champs.length - 1){ champs[i + 1].focus(); return; }
+  const vide = champs.find(c => !c.value.trim());
+  if(vide){ vide.focus(); return; }
+  actions.valider();
+});
+
+render(true);
+})();
+</script>
+</body>
+</html>
